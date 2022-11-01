@@ -37,14 +37,14 @@ const ApiClima = () => {
 
                         <img src={` http://openweathermap.org/img/wn/${weather.weather?.[0].icon}@2x.png`} alt="" />
                         <p> <b>{isCentigrade ? "Grade Celsius" : "Fahrenheit"} {""}</b>
-                            {isCentigrade ? centigrade : fahrenheit}
+                            {isCentigrade ? centigrade.toFixed(2) : fahrenheit.toFixed(2)}
                         </p>
                     </div>
                     <div className="container-date">
                         <p><b>Tem-Max:</b>
-                            {weather.main?.temp_max - 273.15} <br />
+                            {(weather.main?.temp_max - 273.15).toFixed(2)} <br />
                             <b>Tem-Min:</b>
-                            {weather.main?.temp_min - 273.15} <br />
+                            {(weather.main?.temp_min - 273.15).toFixed(2)} <br />
                             <b>Wind-Speed:</b>
                             {weather.wind?.speed} <br />
                             <b>Description:</b>
